@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Recipe Book</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <style>
 :root{--cream:#fdf6ec;--warm:#f5e6cc;--amber:#c97d2e;--dk:#8b5412;--ink:#1e1408;--muted:#7a6650;--red:#b33a2a;--card:#fff9f0;--border:#e8d5b5;--hbg:#1e1408;--hfg:#fdf6ec;--sbg:#f5e6cc;--ov:rgba(0,0,0,.55);--fav:#e05a3a}
 [data-theme=dark]{--cream:#1a1410;--warm:#2a2018;--amber:#e09040;--dk:#c97d2e;--ink:#f0e8d8;--muted:#a08870;--red:#d04030;--card:#221c14;--border:#3a2e20;--hbg:#0e0c08;--hfg:#f0e8d8;--sbg:#2a2018;--ov:rgba(0,0,0,.75)}
@@ -13,13 +14,13 @@
 [data-theme=dark] .tc0{background:#3a2810;border-color:#8b6030;color:#e0b070}[data-theme=dark] .tc1{background:#0e2a10;border-color:#407840;color:#80c880}[data-theme=dark] .tc2{background:#101830;border-color:#3050a0;color:#8090e0}[data-theme=dark] .tc3{background:#2a0818;border-color:#803060;color:#e080b0}[data-theme=dark] .tc4{background:#180830;border-color:#5030a0;color:#b080e0}[data-theme=dark] .tc5{background:#082828;border-color:#207878;color:#60c8c8}[data-theme=dark] .tc6{background:#282008;border-color:#806820;color:#e0c060}[data-theme=dark] .tc7{background:#280e08;border-color:#904030;color:#e09070}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
-header{background:var(--hbg);color:var(--hfg);padding:18px 16px 14px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+header{background:var(--card);color:var(--ink);padding:16px 16px 13px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--border);box-shadow:0 2px 12px rgba(100,60,10,.08)}
 .hl{display:flex;align-items:baseline;gap:8px}
-h1{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.02em;font-style:italic}
+h1{font-family:'Inter',sans-serif;font-size:1.35rem;letter-spacing:-.02em;font-weight:600;font-style:normal;color:var(--dk)}
 .rc{font-size:.75rem;background:var(--amber);color:#fff;border-radius:12px;padding:2px 8px;font-weight:600}
 .ha{display:flex;gap:8px}
-.ib{background:rgba(255,255,255,.12);border:none;color:var(--hfg);width:38px;height:38px;border-radius:50%;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.ib:active{background:rgba(255,255,255,.25)}.ib.af{background:var(--fav)}
+.ib{background:var(--warm);border:1.5px solid var(--border);color:var(--dk);width:38px;height:38px;border-radius:50%;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.ib:active{background:var(--border)}.ib.af{background:var(--fav);border-color:var(--fav);color:#fff}
 .sb{padding:10px 16px;background:var(--sbg);border-bottom:1px solid var(--border);position:sticky;top:60px;z-index:99}
 .sb input{width:100%;padding:10px 14px;border-radius:24px;border:1.5px solid var(--border);background:var(--card);font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--ink);outline:none}
 .sb input:focus{border-color:var(--amber)}
@@ -87,9 +88,9 @@ textarea{resize:vertical;min-height:100px}
 .igt{font-weight:400;font-size:.92rem;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--border)}
 /* ingredient checkboxes */
 .ii{display:flex;align-items:flex-start;gap:10px;padding:8px 4px;border-bottom:1px dashed var(--border);font-size:.92rem;cursor:pointer;user-select:none;transition:opacity .2s}
-.ii.done{opacity:.35;text-decoration:line-through}
+.ii.done{opacity:.45;text-decoration:line-through}
 .ii.nc{background:rgba(201,125,46,.09);border-radius:6px;padding-left:8px}
-.icb{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;transition:all .2s;background:var(--cream);font-size:.6rem;color:var(--cream)}
+.icb{width:22px;height:22px;border-radius:6px;border:2px solid var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .2s;background:transparent;font-size:.75rem;color:transparent}
 .ii.done .icb{background:var(--amber);border-color:var(--amber);color:#fff}
 .ncl{font-size:.68rem;color:var(--muted);margin-left:auto;padding-left:6px;white-space:nowrap;flex-shrink:0;align-self:center}
 /* step checkboxes */
@@ -199,6 +200,8 @@ textarea{resize:vertical;min-height:100px}
 <script>
 // ── State ────────────────────────────────────────
 const SK='recipebook_v3', PK='recipebook_prefs';
+const TWO={base:'https://cdn.jsdelivr.net/npm/twemoji@14.0.2/2/',folder:'svg',ext:'.svg'};
+function twparse(el){if(typeof twemoji!=='undefined')twemoji.parse(el,TWO);}
 let recipes=[], editId=null, curTags=[], showFavs=false;
 let viewId=null, servings=1;
 const doneI=new Set(), doneS=new Set();
@@ -252,18 +255,8 @@ function renderList(){
         '</div>'+
         '<div class="rcr">'+(r.favourite?'❤️':'')+' <span style="color:var(--muted)">›</span></div>'+
       '</div></div>'
-  ).join('');
-}
+  ).join('');  document.querySelectorAll('.reb').forEach(twparse);}
 
-// ── Tag input ────────────────────────────────────
-function tagKey(e){
-  if(e.key==='Enter'||e.key===','){
-    e.preventDefault();
-    const v=e.target.value.trim().replace(/,$/,'');
-    if(v&&!curTags.includes(v)){curTags.push(v);renderTags();}
-    e.target.value='';
-  }
-}
 function removeTag(t){curTags=curTags.filter(x=>x!==t);renderTags();}
 function renderTags(){
   const box=document.getElementById('tagsBox'),inp=document.getElementById('tagIn');
@@ -316,6 +309,7 @@ function renderEPanel(){
   document.getElementById('eGrid').innerHTML=eGridEmojis.map((_,i)=>
     '<button class="ebtn" data-i="'+i+'">'+eGridEmojis[i]+'</button>'
   ).join('');
+  if(typeof twemoji!=='undefined')twemoji.parse(document.getElementById('eGrid'),TWO);
 }
 function switchECat(i){eCat=i;renderEPanel();}
 // Event delegation — no emoji in onclick attribute, safe for flags
@@ -494,16 +488,18 @@ function renderIngView(){
   const cont=document.getElementById('ingCont');if(!cont)return;
   let html='',ii=0;
   (r.ingredients||[]).forEach(i=>{
-    if(i.group){
-      html+='<div class="igt">'+i.text+'</div>';
+    const idx=ii++;
+    // Treat as a section header only if group:true AND text looks like a label (no digits, has * wrapping or ends with :)
+    const isHdr=i.group&&!(/\d/.test(i.text))&&(/^\*.*\*$|:$|^[A-Za-z][a-zA-Z\s&\/\-()]+$/.test(i.text.trim()));
+    if(isHdr){
+      html+='<div class="igt">'+i.text.replace(/\*/g,'')+'</div>';
     }else{
-      const idx=ii++;
       const scaled=scaleT(i.text,servings);
       const unchanged=servings>1&&scaled===i.text;
       const done=doneI.has(idx);
       html+='<div class="ii'+(done?' done':'')+(unchanged?' nc':'')+'" onclick="toggleI('+idx+')">'+
         '<div class="icb">'+(done?'✓':'')+'</div>'+
-        '<span>'+scaled+'</span>'+
+        '<span>'+(i.group?'<strong>'+scaled+'</strong>':scaled)+'</span>'+
         (unchanged?'<span class="ncl">no change</span>':'')+
         '</div>';
     }
@@ -543,7 +539,8 @@ function viewRecipe(id){
   }
 
   // Emoji + name
-  body.appendChild(mk('div','vemoji')).textContent=r.emoji||'🍽️';
+  const emojiEl=mk('div','vemoji');emojiEl.textContent=r.emoji||'🍽️';body.appendChild(emojiEl);
+  if(typeof twemoji!=='undefined')twemoji.parse(emojiEl,TWO);
   body.appendChild(mk('div','vname',r.name));
 
   // Tags
@@ -552,19 +549,6 @@ function viewRecipe(id){
     te.style.cssText='justify-content:center;margin-bottom:16px';
     te.innerHTML=r.tags.map(tagH).join('');
     body.appendChild(te);
-  }
-
-  // Scaler — show when any non-group ingredient exists
-  if((r.ingredients||[]).some(i=>!i.group)){
-    const sc=mk('div','scaler');
-    sc.innerHTML=
-      '<span class="sc-label">Scale recipe</span>'+
-      '<div class="sc-ctrl">'+
-        '<button class="sc-btn" onclick="updateScaler(-1)">&#8722;</button>'+
-        '<span class="sc-val" id="scalerVal">&#215;1</span>'+
-        '<button class="sc-btn" onclick="updateScaler(1)">+</button>'+
-      '</div>';
-    body.appendChild(sc);
   }
 
   // Links
@@ -581,6 +565,19 @@ function viewRecipe(id){
         '</div><span>›</span>';
       sec.appendChild(a);
     });
+  }
+
+  // Scaler — show when ingredients exist
+  if((r.ingredients||[]).length){
+    const sc=mk('div','scaler');
+    sc.innerHTML=
+      '<span class="sc-label">Scale recipe</span>'+
+      '<div class="sc-ctrl">'+
+        '<button class="sc-btn" onclick="updateScaler(-1)">&#8722;</button>'+
+        '<span class="sc-val" id="scalerVal">&#215;1</span>'+
+        '<button class="sc-btn" onclick="updateScaler(1)">+</button>'+
+      '</div>';
+    body.appendChild(sc);
   }
 
   // Ingredients
